@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>求职者 · 姚柏中</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neo: {
+              yellow: '#FFE566',
+              pink: '#FF6B9D',
+              blue: '#4D96FF',
+              green: '#6BCB77',
+              purple: '#9D4EDD',
+              bg: '#FFF8E7',
+            },
+          },
+          boxShadow: {
+            neo: '6px 6px 0 0 #000',
+            'neo-lg': '10px 10px 0 0 #000',
+            'neo-sm': '4px 4px 0 0 #000',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+    body { font-family: 'Space Grotesk', system-ui, sans-serif; }
+    .neo-card {
+      border: 3px solid #000;
+      box-shadow: 6px 6px 0 0 #000;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .neo-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 0 #000;
+    }
+    .neo-btn {
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0 0 #000;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .neo-btn:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 0 #000;
+    }
+    .neo-btn:active {
+      transform: translate(4px, 4px);
+      box-shadow: 0 0 0 0 #000;
+    }
+    .tag-pill {
+      border: 2px solid #000;
+      box-shadow: 3px 3px 0 0 #000;
+    }
+    .status-pulse {
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: 4px 4px 0 0 #4D96FF;
+    }
+  </style>
+</head>
+<body class="bg-neo-bg text-black min-h-screen">
+
+  <!-- Nav -->
+  <nav class="border-b-4 border-black bg-neo-yellow sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+      <a href="index.html" class="text-xl font-bold flex items-center gap-2">
+        <span class="bg-black text-neo-yellow px-2 py-0.5 border-2 border-black shadow-neo-sm">YBZ</span>
+        <span class="tracking-widest font-extrabold text-neo-blue text-lg md:text-xl bg-white rounded px-2 border-2 border-neo-blue shadow-neo-sm hidden sm:inline" style="letter-spacing:0.15em;">姚柏中</span>
+      </a>
+      <div class="flex flex-wrap gap-3">
+        <a href="index.html" class="neo-btn bg-white px-4 py-2 font-semibold text-sm">首页</a>
+        <a href="about.html" class="neo-btn bg-neo-pink text-white px-4 py-2 font-semibold text-sm">关于我</a>
+        <a href="job-seeker.html" class="neo-btn bg-neo-green px-4 py-2 font-semibold text-sm">求职者</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="inline-flex items-center gap-2 bg-neo-green border-3 border-black px-4 py-2 font-bold text-sm shadow-neo-sm status-pulse" style="border: 3px solid #000;">
+        <span class="w-3 h-3 bg-black rounded-full"></span>
+        正在求职 · Open to Work
+      </span>
+      <span class="tag-pill bg-neo-yellow px-3 py-1 text-xs font-bold">可立即到岗</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+      <i class="fa-solid fa-briefcase text-neo-blue mr-2"></i>
+      求职者
+      <span class="bg-neo-blue text-white px-3 border-3 border-black inline-block shadow-neo mt-2 md:mt-0" style="border: 3px solid #000;">中心</span>
+    </h1>
+    <p class="text-lg text-gray-800 max-w-2xl mb-8">
+      为招聘方准备的求职信息一览：意向岗位、技能匹配、简历下载与快速联系。欢迎 HR 与技术负责人直接沟通。
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="#resume" class="neo-btn bg-neo-yellow px-6 py-3 font-bold">
+        <i class="fa-solid fa-file-arrow-down mr-2"></i>下载简历
+      </a>
+      <a href="#contact-form" class="neo-btn bg-white px-6 py-3 font-bold">
+        <i class="fa-solid fa-paper-plane mr-2"></i>投递意向
+      </a>
+      <a href="about.html" class="neo-btn bg-neo-pink text-white px-6 py-3 font-bold">
+        <i class="fa-solid fa-user mr-2"></i>完整履历
+      </a>
+    </div>
+  </header>
+
+  <!-- Job preferences -->
+  <section id="preferences" class="border-y-4 border-black bg-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-2 flex items-center gap-3">
+        <span class="bg-neo-purple text-white border-3 border-black p-2 shadow-neo-sm" style="border: 3px solid #000;"><i class="fa-solid fa-sliders"></i></span>
+        求职意向
+      </h2>
+      <p class="text-gray-700 mb-10">以下偏好可根据具体机会灵活调整，欢迎洽谈。</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="neo-card bg-neo-yellow p-6">
+          <i class="fa-solid fa-user-tie text-2xl mb-3 text-neo-blue"></i>
+          <h3 class="font-bold text-lg mb-2">目标岗位</h3>
+          <ul class="text-sm space-y-1 font-semibold">
+            <li>高级全栈工程师</li>
+            <li>技术 Lead / 架构</li>
+            <li>全栈 Tech Lead</li>
+          </ul>
+        </div>
+        <div class="neo-card bg-neo-blue text-white p-6">
+          <i class="fa-solid fa-building text-2xl mb-3"></i>
+          <h3 class="font-bold text-lg mb-2">行业偏好</h3>
+          <ul class="text-sm space-y-1 opacity-95">
+            <li>SaaS / B 端产品</li>
+            <li>开发者工具</li>
+            <li>互联网 / 科技</li>
+          </ul>
+        </div>
+        <div class="neo-card bg-neo-green p-6">
+          <i class="fa-solid fa-location-dot text-2xl mb-3"></i>
+          <h3 class="font-bold text-lg mb-2">工作地点</h3>
+          <ul class="text-sm space-y-1 font-semibold">
+            <li>上海 / 杭州 / 远程</li>
+            <li>支持混合办公</li>
+            <li>可短期出差</li>
+          </ul>
+        </div>
+        <div class="neo-card bg-neo-pink text-white p-6">
+          <i class="fa-solid fa-clock text-2xl mb-3"></i>
+          <h3 class="font-bold text-lg mb-2">工作形式</h3>
+          <ul class="text-sm space-y-1 opacity-95">
+            <li>全职优先</li>
+            <li>长期项目可谈</li>
+            <li>薪资面议</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills match -->
+  <section id="skills-match" class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-2 flex items-center gap-3">
+      <span class="bg-neo-green border-3 border-black p-2 shadow-neo-sm" style="border: 3px solid #000;"><i class="fa-solid fa-bullseye"></i></span>
+      技能匹配
+    </h2>
+    <p class="text-gray-700 mb-8">核心能力标签，便于快速评估岗位契合度。</p>
+    <div class="flex flex-wrap gap-3 mb-10">
+      <span class="tag-pill bg-neo-yellow px-4 py-2 font-bold text-sm">React / Vue</span>
+      <span class="tag-pill bg-white px-4 py-2 font-bold text-sm">TypeScript</span>
+      <span class="tag-pill bg-neo-blue text-white px-4 py-2 font-bold text-sm">Node.js</span>
+      <span class="tag-pill bg-neo-green px-4 py-2 font-bold text-sm">Python</span>
+      <span class="tag-pill bg-neo-pink text-white px-4 py-2 font-bold text-sm">PostgreSQL</span>
+      <span class="tag-pill bg-neo-purple text-white px-4 py-2 font-bold text-sm">Docker / K8s</span>
+      <span class="tag-pill bg-white px-4 py-2 font-bold text-sm">微服务</span>
+      <span class="tag-pill bg-neo-yellow px-4 py-2 font-bold text-sm">CI/CD</span>
+      <span class="tag-pill bg-neo-green px-4 py-2 font-bold text-sm">系统设计</span>
+      <span class="tag-pill bg-white px-4 py-2 font-bold text-sm">团队管理</span>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="neo-card bg-white p-6">
+        <div class="flex justify-between items-center mb-2">
+          <span class="font-bold">前端工程化</span>
+          <span class="text-sm font-bold text-neo-blue">精通</span>
+        </div>
+        <div class="h-4 border-2 border-black bg-gray-100">
+          <div class="h-full bg-neo-blue w-[92%] border-r-2 border-black"></div>
+        </div>
+      </div>
+      <div class="neo-card bg-white p-6">
+        <div class="flex justify-between items-center mb-2">
+          <span class="font-bold">后端 & API</span>
+          <span class="text-sm font-bold text-neo-green">精通</span>
+        </div>
+        <div class="h-4 border-2 border-black bg-gray-100">
+          <div class="h-full bg-neo-green w-[90%] border-r-2 border-black"></div>
+        </div>
+      </div>
+      <div class="neo-card bg-white p-6">
+        <div class="flex justify-between items-center mb-2">
+          <span class="font-bold">云原生 & 运维</span>
+          <span class="text-sm font-bold text-neo-purple">熟练</span>
+        </div>
+        <div class="h-4 border-2 border-black bg-gray-100">
+          <div class="h-full bg-neo-purple w-[80%] border-r-2 border-black"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="border-y-4 border-black bg-neo-yellow py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-10">
+        <i class="fa-solid fa-file-lines mr-2"></i>简历与材料
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="neo-card bg-white p-8">
+          <h3 class="font-bold text-xl mb-4">在线简历摘要</h3>
+          <dl class="space-y-3 text-sm">
+            <div class="flex gap-2">
+              <dt class="font-bold w-20 shrink-0">姓名</dt>
+              <dd>姚柏中</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="font-bold w-20 shrink-0">经验</dt>
+              <dd>5+ 年全栈开发</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="font-bold w-20 shrink-0">学历</dt>
+              <dd>本科 · 计算机科学与技术</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="font-bold w-20 shrink-0">最近</dt>
+              <dd>高级全栈工程师（2023 — 至今）</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="font-bold w-20 shrink-0">邮箱</dt>
+              <dd>hello@yaobozhong.dev</dd>
+            </div>
+          </dl>
+          <a href="about.html" class="neo-btn inline-block mt-6 bg-neo-blue text-white px-5 py-2 font-bold text-sm">
+            查看完整经历 <i class="fa-solid fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+        <div class="neo-card bg-neo-pink text-white p-8 flex flex-col">
+          <h3 class="font-bold text-xl mb-4">下载与分享</h3>
+          <p class="text-sm opacity-95 mb-6 flex-grow">
+            PDF 简历包含项目细节、技术栈与推荐人联系方式（可提供）。如需英文版或定制版本，请邮件说明。
+          </p>
+          <div class="space-y-3">
+            <button type="button" onclick="alert('请将 resume.pdf 放置于站点根目录后替换此链接。')" class="neo-btn w-full bg-neo-yellow text-black px-5 py-3 font-bold text-left">
+              <i class="fa-solid fa-download mr-2"></i>中文简历 PDF
+            </button>
+            <button type="button" onclick="alert('请将 resume-en.pdf 放置于站点根目录后替换此链接。')" class="neo-btn w-full bg-white text-black px-5 py-3 font-bold text-left">
+              <i class="fa-solid fa-download mr-2"></i>English Resume PDF
+            </button>
+            <a href="mailto:hello@yaobozhong.dev?subject=索取简历 - 姚柏中" class="neo-btn block w-full bg-black text-neo-yellow px-5 py-3 font-bold text-center">
+              <i class="fa-solid fa-envelope mr-2"></i>邮件索取最新版
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why hire -->
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-10 text-center">
+      <i class="fa-solid fa-star text-neo-yellow mr-2"></i>为什么选择我
+    </h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="neo-card bg-neo-purple text-white p-6 text-center">
+        <i class="fa-solid fa-layer-group text-3xl mb-3"></i>
+        <h3 class="font-bold text-lg mb-2">端到端交付</h3>
+        <p class="text-sm opacity-95">从需求到上线一人可闭环，减少跨角色沟通成本。</p>
+      </div>
+      <div class="neo-card bg-neo-green p-6 text-center">
+        <i class="fa-solid fa-users text-3xl mb-3"></i>
+        <h3 class="font-bold text-lg mb-2">带教与规范</h3>
+        <p class="text-sm">有初级工程师指导经验，擅长建立 Code Review 与工程规范。</p>
+      </div>
+      <div class="neo-card bg-neo-blue text-white p-6 text-center sm:col-span-2 lg:col-span-1">
+        <i class="fa-solid fa-chart-line text-3xl mb-3"></i>
+        <h3 class="font-bold text-lg mb-2">业务导向</h3>
+        <p class="text-sm opacity-95">技术选型服务于产品目标，关注可维护性与长期迭代。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact form -->
+  <section id="contact-form" class="border-t-4 border-black bg-neo-blue text-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-2 text-center">快速联系 / 投递意向</h2>
+      <p class="text-center opacity-90 mb-10 max-w-xl mx-auto text-sm">
+        填写下方表单将打开邮件客户端；也可直接发送邮件至 hello@yaobozhong.dev
+      </p>
+      <form
+        class="neo-card bg-white text-black p-8 max-w-xl mx-auto"
+        action="mailto:hello@yaobozhong.dev"
+        method="GET"
+        enctype="text/plain"
+      >
+        <div class="space-y-5">
+          <div>
+            <label for="company" class="block font-bold text-sm mb-1">公司 / 团队名称</label>
+            <input
+              type="text"
+              id="company"
+              name="subject"
+              placeholder="例如：某某科技 - 全栈岗位沟通"
+              class="w-full border-3 border-black px-4 py-3 font-semibold"
+              style="border: 3px solid #000;"
+              required
+            />
+          </div>
+          <div>
+            <label for="role" class="block font-bold text-sm mb-1">招聘岗位</label>
+            <select
+              id="role"
+              name="body"
+              class="w-full border-3 border-black px-4 py-3 font-semibold bg-white"
+              style="border: 3px solid #000;"
+            >
+              <option value="您好，我司正在招聘高级全栈工程师，希望与姚柏中进一步沟通。">高级全栈工程师</option>
+              <option value="您好，我司正在招聘技术 Lead，希望与姚柏中进一步沟通。">技术 Lead</option>
+              <option value="您好，我司有全栈相关岗位，希望与姚柏中进一步沟通。">其他技术岗位</option>
+              <option value="您好，希望与姚柏中洽谈合作/顾问机会。">合作 / 顾问</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block font-bold text-sm mb-1">补充说明（选填）</label>
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="可简述团队规模、技术栈、薪资范围或面试时间…"
+              class="w-full border-3 border-black px-4 py-3 font-semibold resize-y"
+              style="border: 3px solid #000;"
+            ></textarea>
+          </div>
+          <button type="submit" class="neo-btn w-full bg-neo-yellow text-black px-6 py-4 font-bold text-lg">
+            <i class="fa-solid fa-paper-plane mr-2"></i>通过邮件发送意向
+          </button>
+          <p class="text-xs text-gray-600 text-center">
+            提交后将唤起本机邮件客户端；若未弹出，请直接写信至
+            <a href="mailto:hello@yaobozhong.dev" class="underline font-bold">hello@yaobozhong.dev</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Interview tips -->
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <div class="neo-card bg-neo-yellow p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-center">
+      <div class="text-4xl"><i class="fa-solid fa-calendar-check text-neo-green"></i></div>
+      <div class="flex-grow">
+        <h3 class="font-bold text-xl mb-2">面试安排</h3>
+        <p class="text-sm text-gray-800">
+          通常工作日 10:00 — 20:00 可安排视频面试；技术面可现场编码或分享 GitHub 项目。一般 3 个工作日内回复邮件。
+        </p>
+      </div>
+      <a href="mailto:hello@yaobozhong.dev?subject=面试邀约 - 姚柏中" class="neo-btn bg-black text-neo-yellow px-6 py-3 font-bold shrink-0">
+        预约面试
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t-4 border-black bg-black text-neo-yellow py-6">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-between items-center gap-4 text-sm font-semibold">
+      <span>© 2026 姚柏中 · 求职者中心</span>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:underline">首页</a>
+        <a href="about.html" class="hover:underline">关于我</a>
+        <a href="#" class="hover:underline"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="hover:underline"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>姚柏中 · 全栈程序员</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neo: {
+              yellow: '#FFE566',
+              pink: '#FF6B9D',
+              blue: '#4D96FF',
+              green: '#6BCB77',
+              purple: '#9D4EDD',
+              bg: '#FFF8E7',
+            },
+          },
+          boxShadow: {
+            neo: '6px 6px 0 0 #000',
+            'neo-lg': '10px 10px 0 0 #000',
+            'neo-sm': '4px 4px 0 0 #000',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+    body { font-family: 'Space Grotesk', system-ui, sans-serif; }
+    .neo-card {
+      border: 3px solid #000;
+      box-shadow: 6px 6px 0 0 #000;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .neo-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 0 #000;
+    }
+    .neo-btn {
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0 0 #000;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .neo-btn:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 0 #000;
+    }
+    .neo-btn:active {
+      transform: translate(4px, 4px);
+      box-shadow: 0 0 0 0 #000;
+    }
+  </style>
+</head>
+<body class="bg-neo-bg text-black min-h-screen">
+
+  <!-- Nav -->
+  <nav class="border-b-4 border-black bg-neo-yellow sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+      <a href="index.html" class="text-xl font-bold flex items-center gap-2">
+        <span class="bg-black text-neo-yellow px-2 py-0.5 border-2 border-black shadow-neo-sm">YBZ</span>
+        <span class="tracking-widest font-extrabold text-neo-blue text-lg md:text-xl bg-white rounded px-2 border-2 border-neo-blue shadow-neo-sm" style="letter-spacing:0.25em;">姚柏中 · Yao Bozhong</span>
+      </a>
+      <div class="flex flex-wrap gap-3">
+        <a href="index.html" class="neo-btn bg-white px-4 py-2 font-semibold text-sm">首页</a>
+        <a href="about.html" class="neo-btn bg-neo-pink text-white px-4 py-2 font-semibold text-sm">关于我</a>
+        <a href="job-seeker.html" class="neo-btn bg-neo-green px-4 py-2 font-semibold text-sm">求职者</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-4 py-16 md:py-24">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="inline-block bg-neo-green border-3 border-black px-3 py-1 font-semibold text-sm mb-4 shadow-neo-sm" style="border: 3px solid #000;">
+          <i class="fa-solid fa-code mr-1"></i> 全栈开发 · 开放合作
+        </p>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4">
+          你好，我是<br />
+          <span class="bg-neo-blue text-white px-2 inline-block mt-1 border-3 border-black shadow-neo" style="border: 3px solid #000;">姚柏中</span>
+        </h1>
+        <p class="text-lg md:text-xl mb-8 leading-relaxed">
+          从前端到后端，从数据库到部署——我热爱用代码把想法变成可用的产品。专注清晰架构、可靠交付与良好用户体验。
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#projects" class="neo-btn bg-neo-yellow px-6 py-3 font-bold">
+            <i class="fa-solid fa-folder-open mr-2"></i>查看项目
+          </a>
+          <a href="about.html" class="neo-btn bg-white px-6 py-3 font-bold">
+            <i class="fa-solid fa-user mr-2"></i>了解更多
+          </a>
+          <a href="job-seeker.html" class="neo-btn bg-neo-green px-6 py-3 font-bold">
+            <i class="fa-solid fa-briefcase mr-2"></i>求职信息
+          </a>
+        </div>
+      </div>
+      <div class="neo-card bg-neo-pink p-8 rotate-1 md:rotate-2">
+        <div class="bg-white border-3 border-black p-6 -rotate-1" style="border: 3px solid #000;">
+          <div class="w-24 h-24 bg-neo-purple border-3 border-black flex items-center justify-center text-4xl text-white mb-4 shadow-neo-sm" style="border: 3px solid #000;">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <ul class="space-y-3 font-semibold">
+            <li><i class="fa-solid fa-location-dot text-neo-blue mr-2"></i> 中国</li>
+            <li><i class="fa-solid fa-briefcase text-neo-green mr-2"></i> 全栈工程师</li>
+            <li><i class="fa-solid fa-clock text-neo-yellow mr-2"></i> 5+ 年开发经验</li>
+            <li><i class="fa-solid fa-envelope text-neo-pink mr-2"></i> hello@yaobozhong.dev</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Skills -->
+  <section id="skills" class="border-y-4 border-black bg-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-2 flex items-center gap-3">
+        <span class="bg-neo-yellow border-3 border-black p-2 shadow-neo-sm" style="border: 3px solid #000;"><i class="fa-solid fa-layer-group"></i></span>
+        技术栈
+      </h2>
+      <p class="text-gray-700 mb-10">从前端界面到服务端 API，再到运维与数据层。</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="neo-card bg-neo-yellow p-6">
+          <i class="fa-brands fa-react text-3xl mb-3"></i>
+          <h3 class="font-bold text-lg mb-2">前端</h3>
+          <p class="text-sm">React · Vue · TypeScript · Tailwind · 响应式设计</p>
+        </div>
+        <div class="neo-card bg-neo-blue text-white p-6">
+          <i class="fa-solid fa-server text-3xl mb-3"></i>
+          <h3 class="font-bold text-lg mb-2">后端</h3>
+          <p class="text-sm opacity-90">Node.js · Python · Go · REST · GraphQL</p>
+        </div>
+        <div class="neo-card bg-neo-green p-6">
+          <i class="fa-solid fa-database text-3xl mb-3"></i>
+          <h3 class="font-bold text-lg mb-2">数据</h3>
+          <p class="text-sm">PostgreSQL · Redis · MongoDB · Prisma</p>
+        </div>
+        <div class="neo-card bg-neo-purple text-white p-6">
+          <i class="fa-solid fa-cloud text-3xl mb-3"></i>
+          <h3 class="font-bold text-lg mb-2">运维</h3>
+          <p class="text-sm opacity-90">Docker · CI/CD · AWS · Linux · Nginx</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-10 flex items-center gap-3">
+      <span class="bg-neo-pink text-white border-3 border-black p-2 shadow-neo-sm" style="border: 3px solid #000;"><i class="fa-solid fa-rocket"></i></span>
+      精选项目
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="neo-card bg-white p-6 flex flex-col">
+        <span class="bg-neo-green border-2 border-black px-2 py-0.5 text-xs font-bold w-fit mb-3">全栈</span>
+        <h3 class="font-bold text-xl mb-2">协作白板平台</h3>
+        <p class="text-sm text-gray-700 flex-grow mb-4">实时多人协作、WebSocket 同步、权限与版本管理。</p>
+        <p class="text-xs font-semibold"><i class="fa-brands fa-node-js mr-1"></i> Node · React · Redis</p>
+      </article>
+      <article class="neo-card bg-neo-yellow p-6 flex flex-col">
+        <span class="bg-neo-blue text-white border-2 border-black px-2 py-0.5 text-xs font-bold w-fit mb-3">SaaS</span>
+        <h3 class="font-bold text-xl mb-2">数据分析仪表盘</h3>
+        <p class="text-sm text-gray-800 flex-grow mb-4">可配置图表、定时报表、多租户与 RBAC 权限体系。</p>
+        <p class="text-xs font-semibold"><i class="fa-brands fa-python mr-1"></i> Python · Vue · PostgreSQL</p>
+      </article>
+      <article class="neo-card bg-neo-pink text-white p-6 flex flex-col">
+        <span class="bg-black border-2 border-black px-2 py-0.5 text-xs font-bold w-fit mb-3">开源</span>
+        <h3 class="font-bold text-xl mb-2">CLI 工具集</h3>
+        <p class="text-sm opacity-90 flex-grow mb-4">项目脚手架、代码生成与团队规范一键检查。</p>
+        <p class="text-xs font-semibold"><i class="fa-brands fa-golang mr-1"></i> Go · Shell</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="border-t-4 border-black bg-neo-blue text-white py-16">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">一起做点酷的东西？</h2>
+      <p class="mb-8 opacity-90 max-w-xl mx-auto">无论是全职机会、外包项目还是技术交流，都欢迎联系我。</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:hello@yaobozhong.dev" class="neo-btn bg-neo-yellow text-black px-6 py-3 font-bold">
+          <i class="fa-solid fa-paper-plane mr-2"></i>发邮件
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="neo-btn bg-white text-black px-6 py-3 font-bold">
+          <i class="fa-brands fa-github mr-2"></i>GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t-4 border-black bg-black text-neo-yellow py-6">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-between items-center gap-4 text-sm font-semibold">
+      <span>© 2026 姚柏中</span>
+      <div class="flex gap-4">
+        <a href="#" class="hover:underline"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="hover:underline"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="hover:underline"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

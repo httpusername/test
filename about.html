@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>关于我 · 姚柏中</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neo: {
+              yellow: '#FFE566',
+              pink: '#FF6B9D',
+              blue: '#4D96FF',
+              green: '#6BCB77',
+              purple: '#9D4EDD',
+              bg: '#FFF8E7',
+            },
+          },
+          boxShadow: {
+            neo: '6px 6px 0 0 #000',
+            'neo-lg': '10px 10px 0 0 #000',
+            'neo-sm': '4px 4px 0 0 #000',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+    body { font-family: 'Space Grotesk', system-ui, sans-serif; }
+    .neo-card {
+      border: 3px solid #000;
+      box-shadow: 6px 6px 0 0 #000;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .neo-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 0 #000;
+    }
+    .neo-btn {
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0 0 #000;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .neo-btn:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 0 #000;
+    }
+    .neo-btn:active {
+      transform: translate(4px, 4px);
+      box-shadow: 0 0 0 0 #000;
+    }
+    .timeline-dot {
+      width: 16px;
+      height: 16px;
+      background: #FFE566;
+      border: 3px solid #000;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="bg-neo-bg text-black min-h-screen">
+
+  <!-- Nav -->
+  <nav class="border-b-4 border-black bg-neo-yellow sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+      <a href="index.html" class="text-xl font-bold flex items-center gap-2">
+        <span class="bg-black text-neo-yellow px-2 py-0.5 border-2 border-black shadow-neo-sm">YBZ</span>
+        姚柏中
+      </a>
+      <div class="flex flex-wrap gap-3">
+        <a href="index.html" class="neo-btn bg-white px-4 py-2 font-semibold text-sm">首页</a>
+        <a href="about.html" class="neo-btn bg-neo-pink text-white px-4 py-2 font-semibold text-sm">关于我</a>
+        <a href="job-seeker.html" class="neo-btn bg-neo-green px-4 py-2 font-semibold text-sm">求职者</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page title -->
+  <header class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      <i class="fa-solid fa-user-astronaut text-neo-purple mr-2"></i>
+      关于
+      <span class="bg-neo-pink text-white px-3 border-3 border-black inline-block shadow-neo" style="border: 3px solid #000;">姚柏中</span>
+    </h1>
+    <p class="text-lg text-gray-800 max-w-2xl">
+      一名相信「好代码应该让人读懂」的全栈程序员。下面是我的故事、经历与日常。
+    </p>
+  </header>
+
+  <!-- Bio -->
+  <section class="max-w-5xl mx-auto px-4 pb-12">
+    <div class="grid md:grid-cols-5 gap-8">
+      <div class="md:col-span-2 neo-card bg-neo-purple text-white p-8 -rotate-1">
+        <div class="text-6xl mb-4"><i class="fa-solid fa-face-smile"></i></div>
+        <h2 class="text-2xl font-bold mb-3">我是谁</h2>
+        <p class="text-sm leading-relaxed opacity-95">
+          姚柏中，计算机相关专业背景，毕业后一直从事 Web 与云服务相关开发。喜欢从 0 到 1 搭建产品，也乐于在成熟系统中做性能优化与架构演进。
+        </p>
+      </div>
+      <div class="md:col-span-3 neo-card bg-white p-8">
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-quote-left text-neo-blue"></i> 个人理念
+        </h2>
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <span class="bg-neo-green border-2 border-black p-2 h-fit shadow-neo-sm"><i class="fa-solid fa-check"></i></span>
+            <div>
+              <strong>用户第一</strong>
+              <p class="text-sm text-gray-700 mt-1">技术选型服务于真实需求，而不是追逐热点框架。</p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="bg-neo-yellow border-2 border-black p-2 h-fit shadow-neo-sm"><i class="fa-solid fa-check"></i></span>
+            <div>
+              <strong>可维护性</strong>
+              <p class="text-sm text-gray-700 mt-1">清晰的模块边界、测试与文档，让团队能长期迭代。</p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="bg-neo-pink text-white border-2 border-black p-2 h-fit shadow-neo-sm"><i class="fa-solid fa-check"></i></span>
+            <div>
+              <strong>持续学习</strong>
+              <p class="text-sm text-gray-700 mt-1">保持对新技术的好奇，同时深耕基础与工程实践。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="border-y-4 border-black bg-neo-yellow py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-10">
+        <i class="fa-solid fa-road mr-2"></i>经历时间线
+      </h2>
+      <div class="space-y-8">
+        <div class="flex gap-4 md:gap-6">
+          <div class="timeline-dot mt-1"></div>
+          <div class="neo-card bg-white p-6 flex-grow">
+            <span class="text-xs font-bold bg-neo-blue text-white px-2 py-0.5 border-2 border-black">2023 — 至今</span>
+            <h3 class="font-bold text-xl mt-2 mb-1">高级全栈工程师</h3>
+            <p class="text-sm text-gray-700">负责核心产品研发、技术方案评审与初级工程师指导。主导微服务拆分与前端工程化升级。</p>
+          </div>
+        </div>
+        <div class="flex gap-4 md:gap-6">
+          <div class="timeline-dot mt-1 bg-neo-pink"></div>
+          <div class="neo-card bg-white p-6 flex-grow">
+            <span class="text-xs font-bold bg-neo-green px-2 py-0.5 border-2 border-black">2020 — 2023</span>
+            <h3 class="font-bold text-xl mt-2 mb-1">全栈开发工程师</h3>
+            <p class="text-sm text-gray-700">独立交付多个 B 端 SaaS 模块，积累 Node.js 与 React 全链路经验，参与数据库设计与 API 规范制定。</p>
+          </div>
+        </div>
+        <div class="flex gap-4 md:gap-6">
+          <div class="timeline-dot mt-1 bg-neo-purple"></div>
+          <div class="neo-card bg-white p-6 flex-grow">
+            <span class="text-xs font-bold bg-neo-yellow px-2 py-0.5 border-2 border-black">2018 — 2020</span>
+            <h3 class="font-bold text-xl mt-2 mb-1">前端开发工程师</h3>
+            <p class="text-sm text-gray-700">从 Vue 生态入手，参与电商与内容平台开发，逐步扩展到 Node 中间层与基础运维。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & certs -->
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="neo-card bg-neo-blue text-white p-8">
+        <h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-graduation-cap mr-2"></i>教育背景</h2>
+        <p class="font-bold text-lg">某某大学 · 计算机科学与技术</p>
+        <p class="text-sm opacity-90 mt-2">本科 · 2014 — 2018</p>
+        <p class="text-sm mt-4 opacity-90">主修数据结构、操作系统、软件工程；在校期间参与 ACM 与开源社团。</p>
+      </div>
+      <div class="neo-card bg-neo-green p-8">
+        <h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-certificate mr-2"></i>认证与兴趣</h2>
+        <ul class="space-y-2 text-sm font-semibold">
+          <li><i class="fa-brands fa-aws text-neo-purple mr-2"></i> AWS Solutions Architect Associate</li>
+          <li><i class="fa-solid fa-shield-halved text-neo-blue mr-2"></i> 关注 Web 安全与 OWASP 实践</li>
+          <li><i class="fa-solid fa-book mr-2"></i> 技术博客与开源贡献</li>
+          <li><i class="fa-solid fa-mug-hot mr-2"></i> 咖啡、徒步、独立游戏</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values grid -->
+  <section class="border-t-4 border-black bg-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">工作方式</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="text-center p-4 border-3 border-black bg-neo-yellow shadow-neo-sm" style="border: 3px solid #000;">
+          <i class="fa-solid fa-comments text-2xl mb-2"></i>
+          <p class="font-bold text-sm">主动沟通</p>
+        </div>
+        <div class="text-center p-4 border-3 border-black bg-neo-pink text-white shadow-neo-sm" style="border: 3px solid #000;">
+          <i class="fa-solid fa-bolt text-2xl mb-2"></i>
+          <p class="font-bold text-sm">快速迭代</p>
+        </div>
+        <div class="text-center p-4 border-3 border-black bg-neo-blue text-white shadow-neo-sm" style="border: 3px solid #000;">
+          <i class="fa-solid fa-magnifying-glass text-2xl mb-2"></i>
+          <p class="font-bold text-sm">代码审查</p>
+        </div>
+        <div class="text-center p-4 border-3 border-black bg-neo-green shadow-neo-sm" style="border: 3px solid #000;">
+          <i class="fa-solid fa-handshake text-2xl mb-2"></i>
+          <p class="font-bold text-sm">团队协作</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back CTA -->
+  <section class="max-w-5xl mx-auto px-4 py-12 text-center">
+    <a href="index.html" class="neo-btn inline-block bg-black text-neo-yellow px-8 py-4 font-bold text-lg">
+      <i class="fa-solid fa-arrow-left mr-2"></i>返回首页
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t-4 border-black bg-black text-neo-yellow py-6">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-between items-center gap-4 text-sm font-semibold">
+      <span>© 2026 姚柏中</span>
+      <div class="flex gap-4">
+        <a href="#" class="hover:underline"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="hover:underline"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="hover:underline"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
